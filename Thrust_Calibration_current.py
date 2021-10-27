@@ -1,8 +1,14 @@
 '''
-Date: 2021-10-27 09:13:34
-LastEditors: Guo currentuqin,12032421@mail.sustech.edu.cn
-LastEditTime: 2021-10-28 02:15:23
-FilePath: \thruster_thrust_calibration\Thrust_Calibration.pcurrent
+*********************************************************************************************
+  *File: Thrust_Calibration_current.py
+  *Project: T200_Thrust_Calibration
+  *Filepath: /home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/Thrust_Calibration_current.py 
+  *File Created: Thursday, 28th October 2021 2:28:48 am
+  *Author: Guo Yucan, 12032421@mail.sustech.edu.cn 
+  *Last Modified: Thursday, 28th October 2021 4:02:42 am
+  *Modified By: Guo Yucan, 12032421@mail.sustech.edu.cn 
+  *Copyright @ 2021 , BionicDL LAB, SUSTECH, Shenzhen, China 
+*********************************************************************************************
 '''
 
 import matplotlib.pyplot as plt
@@ -15,7 +21,7 @@ from scipy.optimize import leastsq,curve_fit
 
 ## Import data, manage data collection
 
-table = pd.read_csv('/home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/Thrust_16V.csv')
+table = pd.read_csv('/home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/Thrust_14V.csv')
 data = np.array(table)
 data[0:91,2] = (-1) * data[0:91,2]
 
@@ -69,7 +75,7 @@ print("RMSE:",RMSE1)
 
 plt.figure
 
-plt.plot(thrust,current,'rx',label = 'original data')
+plt.plot(thrust,current,'r.',label = 'original data')
 plt.plot(thrust,y_poly,'b-',label = 'fitted curve')
 
 plt.xlabel('thrust/N')
