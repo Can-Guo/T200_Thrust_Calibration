@@ -18,6 +18,7 @@ from numpy.core.fromnumeric import size
 import pandas as pd
 from scipy.stats import norm 
 from scipy.optimize import leastsq,curve_fit
+from datetime import datetime
 
 ## Import data, manage data collection
 
@@ -81,5 +82,11 @@ plt.plot(thrust,y_poly,'b-',label = 'fitted curve')
 plt.xlabel('thrust/N')
 plt.ylabel('current/A')
 plt.legend()
+
+current = datetime.now()
+fig_name = './' + str(current) + '.png'
+plt.savefig(fig_name,dpi=600)
+
+
 plt.show()
 
