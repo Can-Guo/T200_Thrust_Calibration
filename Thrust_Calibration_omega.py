@@ -21,7 +21,7 @@ from datetime import datetime
 
 ## Import data, manage data collection
 
-table = pd.read_csv('/home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/Thrust_16V.csv')
+table = pd.read_csv('/home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/excell/Thrust_16V.csv')
 data = np.array(table)
 data[0:91,1] = (-1) * data[0:91,1]
 
@@ -78,7 +78,7 @@ plt.ylabel('omega/(rad/s)')
 plt.legend()
 
 current = datetime.now()
-fig_name = './' + str(current) + '.png'
+fig_name = './fig/' + str(current) + '.png'
 plt.savefig(fig_name,dpi=600)
 
 
