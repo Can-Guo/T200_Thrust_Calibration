@@ -21,7 +21,7 @@ from datetime import datetime
 
 ## Import data, manage data collection
 
-table = pd.read_csv('/home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/Thrust_12V.csv')
+table = pd.read_csv('/home/guoyucan/BionicDL/Thrust_Calibration/T200_Thrust_Calibration/Thrust_16V.csv')
 data = np.array(table)
 data[0:91,1] = (-1) * data[0:91,1]
 
@@ -74,7 +74,7 @@ plt.plot(thrust,omega,'r.',label = 'original data')
 plt.plot(thrust,y_poly,'b-',label = 'fitted curve')
 
 plt.xlabel('thrust/N')
-plt.ylabel('omega/A')
+plt.ylabel('omega/(rad/s)')
 plt.legend()
 
 current = datetime.now()
